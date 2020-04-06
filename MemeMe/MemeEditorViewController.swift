@@ -29,14 +29,12 @@ class MemeEditorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        
-        setUpTextField(topTextField)
-        setUpTextField(bottomTextField)
+        setUpTextField(topTextField, "TOP")
+        setUpTextField(bottomTextField, "BOTTOM")
     }
     
-    func setUpTextField(_ textField: UITextField){
+    func setUpTextField(_ textField: UITextField, _ text: String){
+        textField.text = text
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
         textField.borderStyle = .none
@@ -61,6 +59,10 @@ class MemeEditorViewController: UIViewController {
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
         presentImagePickerControllerWith(.camera)
+    }
+    
+    @IBAction func cancelPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     func presentImagePickerControllerWith(_ sourceType: UIImagePickerController.SourceType ){
