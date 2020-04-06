@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeMeViewController: UIViewController {
+class MemeEditorViewController: UIViewController {
     
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -48,7 +48,6 @@ class MemeMeViewController: UIViewController {
         subscribeToKeyboardNotification()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         shareButton.isEnabled = false
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -116,6 +115,8 @@ class MemeMeViewController: UIViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memes.append(meme)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadMemes"), object: nil)
     }
     
     func generateMemedImage() -> UIImage {
@@ -135,7 +136,7 @@ class MemeMeViewController: UIViewController {
 }
 
 
-extension MemeMeViewController : UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MemeEditorViewController : UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
