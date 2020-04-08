@@ -23,12 +23,13 @@
                                 <rect key="frame" x="0.0" y="764" width="414" height="49"/>
                                 <color key="backgroundColor" red="0.2470588235" green="0.64705882349999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <barButtonItem title="Pick" width="220.5" id="Wv5-kU-Y4h">
+                                    <barButtonItem title="Pick" width="152.5" id="Wv5-kU-Y4h">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="pickAnImageAlbum:" destination="BYZ-38-t0r" id="3x1-VQ-kSQ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="157" style="plain" systemItem="fixedSpace" id="ATD-oO-9VH"/>
                                     <barButtonItem systemItem="camera" id="ggq-wv-sdu">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
